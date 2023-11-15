@@ -9,13 +9,13 @@ import Footer from "../Footer/Footer";
 import Operator from "../Operator/Operator";
 
 
-const Main = () => {
+const Main = ({onOpen}) => {
 	return (
 		<>
 			<Header />
 			{/* Основной бллок */}
 			<main>
-				<Operator />
+				<Operator onOpen={onOpen} />
 			</main>
 			{/* Конец основного блока */}
 			<Footer />

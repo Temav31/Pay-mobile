@@ -7,17 +7,13 @@ import Megafon from "../../image/megafon.svg";
 import Mts from "../../image/mts.svg";
 import Belain from "../../image/beelain.svg";
 
-const Operator = () => {
-	function handleClick() {
-		console.log("hi");
-	}
-	// место
+const Operator = ({onOpen}) => {
 	return (
 		<header className="operator" >
 			<h2 className="operator__title">Выберите оператора</h2>
 			<ul className="operator__container">
 				<li className="operator__item">
-					<button className="operator__button" onClick={handleClick}>
+					<button className="operator__button" onClick={onOpen}>
 						<dev className="operator__logo">
 							<img className="operator__image" src={Mts} alt="Логотип оператора" />
 						</dev>
@@ -25,7 +21,7 @@ const Operator = () => {
 					</button>
 				</li>
 				<li className="operator__item">
-					<button className="operator__button" onClick={handleClick}>
+					<button className="operator__button" onClick={onOpen}>
 						<dev className="operator__logo">
 							<img className="operator__image_megafon" src={Megafon} alt="Логотип оператора" />
 						</dev>
@@ -33,7 +29,7 @@ const Operator = () => {
 					</button>
 				</li>
 				<li className="operator__item">
-					<button className="operator__button" onClick={handleClick}>
+					<button className="operator__button" onClick={onOpen}>
 						<dev className="operator__logo">
 							<img className="operator__image" src={Belain} alt="Логотип оператора" />
 						</dev>
