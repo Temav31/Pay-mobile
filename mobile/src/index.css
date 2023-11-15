@@ -1,0 +1,8 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', 'Roboto';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@import url(./vendor/normalize.css);
