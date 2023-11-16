@@ -55,7 +55,7 @@
 	font-style: normal;
 	font-weight: 700;
 	line-height: normal;
-	padding: 80px 15px 50px;
+	padding: 80px 0 50px;
 	margin: 0;
 }
 
@@ -104,7 +104,7 @@
 
 .popup__button {
 	background-color: #FF6838;
-	border-radius: 3px;
+	border-radius: 10px;
 	color: #FFF;
 	text-align: center;
 	font-size: 12px;
@@ -117,3 +117,9 @@
 	border: none;
 	cursor: pointer;
 }
+.popup__button_off{
+	pointer-events: none;
+	color: #A0A0A0;
+	background-color: #F9F9F9;
+}
+

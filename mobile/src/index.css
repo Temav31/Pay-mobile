@@ -3,6 +3,7 @@ body {
   font-family: 'Segoe UI', 'Roboto';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #423e3e;
 }
 
 @import url(./vendor/normalize.css);

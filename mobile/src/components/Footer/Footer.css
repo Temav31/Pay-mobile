@@ -61,7 +61,7 @@ li {
 /* на средний размер */
 @media (min-width: 768px) {
 	.footer {
-		padding: 78px 30px 20px;
+		padding: 90px 30px 20px;
 	}
 
 	.footer__head {
@@ -98,8 +98,8 @@ li {
 /* на максимальный размер */
 @media (min-width: 1280px) {
 	.footer {
-		background-color: white;
-		padding: 78px 70px 20px;
+		/* background-color: white; */
+		padding: 10px 70px 20px;
 	}
 
 	.footer__box {
