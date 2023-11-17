@@ -17,7 +17,7 @@ const Operator = ({ onOpen }) => {
 					<ul className="operator__container">
 						{
 							operatorList.map((item) => (
-								<OperatorItem onClick={onOpen} item={item} />
+								<OperatorItem onClick={onOpen} item={item} key={item.name}/>
 							))
 						}
 					</ul>

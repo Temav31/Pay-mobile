@@ -25,9 +25,9 @@ function App() {
 	const [operator, setOperator] = useState("");
 	const [loading, setLoading] = useState(false);
 
+	const [block, setBlock] = useState(false);
 
 	function handleOpen(name) {
-		console.log(name)
 		setOperator(name)
 		setPayPopupOpen(true);
 	}
@@ -40,14 +40,15 @@ function App() {
 
 	// отправка на оплату
 	function handleSubmit(data) {
-		// setLoading(true);
+		// console.log(data)
+		setBlock(true);
 		MainApi.pay(data)
 			.then(() => {
-				console.log("Оплата прошла")
 				setPayPopupOpen(false);
+				setResult(true);
+				setAnswerPopupOpen(true);
 			})
 			.catch((err) => {
-				console.log("Оплата не прошла")
 				setPayPopupOpen(false);
 				if (Math.random() < 0.5) {
 					setResult(true);
@@ -56,7 +57,8 @@ function App() {
 				}
 				setAnswerPopupOpen(true);
 			})
-			// setLoading(false);
+		setBlock(false);
+		// setLoading(false);
 	}
 	return (
 		<div className="App">
@@ -74,6 +76,7 @@ function App() {
 				onSubmit={handleSubmit}
 				name={operator}
 				preloader={loading}
+				block={block}
 			/>
 			<SuccessPopup
 				isOpen={answerPopupOpen}

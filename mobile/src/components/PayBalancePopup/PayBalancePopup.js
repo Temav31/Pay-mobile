@@ -2,19 +2,13 @@ import React, { useEffect, useState } from "react";
 import InputMask from 'react-input-mask';
 // стили
 import "./PayBalancePopup.css";
-// import Exite from "../../images/Group1.svg";
 import Exite from "../../image/Group1.svg"
+// import Preloader from "../Preloader/Preloader"
 
-import Preloader from "../Preloader/Preloader"
-
+import {regularNumber, regularPhone} from "../../utils/constant"
 
 // Функциональный компонент
-function PayBalancePopup({ isOpen, onClose, onSubmit, name, preloader }) {
-	// const regularPhone = /^\+?[+7,8]{7,19}$/;
-	const regularNumber = /^([1-9][0-9]{0,2}|1000)$/;
-	// ^\+7\(\d{3}\)\d{3}-\d{2}-\d{2}$
-	// const regularPhone = /^\+?\d{7}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}$/;
-	const regularPhone = /^\+7\(\d{3}\)\d{3}-\d{2}-\d{2}$/;
+function PayBalancePopup({ isOpen, onClose, onSubmit, name, preloader, block }) {
 	// данные
 	const [number, setNumber] = useState("");
 	const [phone, setPhone] = useState("");
@@ -64,6 +58,7 @@ function PayBalancePopup({ isOpen, onClose, onSubmit, name, preloader }) {
 	function handleSubmit(event) {
 		event.preventDefault();
 		onSubmit({
+			operator: name,
 			phone: phone,
 			number: number,
 		});
@@ -78,7 +73,6 @@ function PayBalancePopup({ isOpen, onClose, onSubmit, name, preloader }) {
 		} else {
 			setValForm(false);
 		}
-		// console.log(valForm);
 	}, [number, phone, valNumber, valPhone]);
 
 	return (
@@ -134,7 +128,10 @@ function PayBalancePopup({ isOpen, onClose, onSubmit, name, preloader }) {
 									</span>
 								</label>
 								<button
-									className={`popup__button ${!valForm ? "popup__button_off" : ""}`}
+									className={`popup__button
+									 ${!valForm ? "popup__button_off" : ""}
+									 ${block ? "popup__button_off" : ""}
+									 `}
 									type='submit'
 								>
 									Пополнить</button>
@@ -146,4 +143,3 @@ function PayBalancePopup({ isOpen, onClose, onSubmit, name, preloader }) {
 	)
 }
 export default PayBalancePopup;
-,,..l
